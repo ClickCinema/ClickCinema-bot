@@ -25,8 +25,7 @@ async def get_files(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ]
 
     for quality, link in files:
-        msg = await query.message.reply_text(f"{quality}:
-{link}")
+        msg = await query.message.reply_text(f"{quality}:\n{link}")
         await asyncio.sleep(120)
         try:
             await context.bot.delete_message(chat_id=msg.chat.id, message_id=msg.message_id)
